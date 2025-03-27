@@ -1,1 +1,50 @@
 @import "tailwindcss";
+@theme {
+  /* Grid Configuration */
+  --grid-column-width: 64px;
+  --grid-gutter-width: 32px;
+  --grid-max-width: 1120px;
+  --grid-columns: 12;
+
+  /* Calculate column width percentage */
+  --grid-column: calc(
+    (var(--grid-max-width) - (var(--grid-gutter-width) * (var(--grid-columns) - 1))) / 
+    var(--grid-columns)
+  );
+}
+
+@layer components {
+  /* Container */
+  .grid-container {
+    @apply mx-auto;
+    max-width: var(--grid-max-width);
+  }
+
+  /* Base Grid */
+  .grid-system {
+    @apply grid gap-[var(--grid-gutter-width)];
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  }
+
+  /* Column Spans */
+  .grid-col {
+    @apply min-h-[1px]; /* Prevent collapsing */
+    grid-column: span var(--columns);
+  }
+
+  /* Responsive Column Classes */
+  @each $i in 1 to 12 {
+    .col-span-$(i) {
+      --columns: $(i);
+    }
+  }
+
+  /* Debug Grid Overlay */
+  .debug-grid {
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.1) 0 var(--grid-column),
+      transparent var(--grid-column) calc(var(--grid-column) + var(--grid-gutter-width))
+    );
+  }
+}
