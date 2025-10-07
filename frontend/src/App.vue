@@ -8,8 +8,7 @@ import Button from 'primevue/button'
     Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
     documentation
   </p>
-
-  <Button label="Submit" />
+  <Button label="Profile" icon="pi pi-users" />
 </template>
 
 <style scoped></style>
