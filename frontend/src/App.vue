@@ -22,7 +22,7 @@ const handleSubmit = () => {
 
 <template>
   <div>
-    <Card >
+    <Card class="w-full max-w-md mx-auto mt-10 p-6">
       <template #title>
         <div>
           <h1>Team Tempo</h1>
@@ -47,13 +47,13 @@ const handleSubmit = () => {
           <span>Continue with Google</span>
         </Button>
 
-        <Divider align="center">
+        <Divider class="mb-8 mt-8">
           <span class="divider-text">OR</span>
         </Divider>
 
         <!-- Email/Password Form -->
         <form @submit.prevent="handleSubmit">
-          <div class="form-field">
+          <div class="mb-4">
             <label for="email">Email or Username</label>
             <InputText 
               id="email"
@@ -65,7 +65,7 @@ const handleSubmit = () => {
             />
           </div>
 
-          <div >
+          <div class="mb-4">
             <label for="password">Password</label>
             <Password 
               id="password"

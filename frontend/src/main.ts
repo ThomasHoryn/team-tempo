@@ -5,7 +5,7 @@ import PrimeVue from 'primevue/config'
 import Lara from '@primevue/themes/lara'
 import { definePreset } from '@primeuix/themes'
 import 'primeicons/primeicons.css'
-import 'tailwindcss';
+import './style.css'
 
 const MyPreset = definePreset(Lara, {
   semantic: {
